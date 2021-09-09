@@ -12,13 +12,13 @@ def generate_number(min,max):
 guess_counter = 0
 
 # let's get the player's name
-player_name = input("Let's play a game! What's your name?")
+player_name = input("Let's play a game! What's your name?\n")
 print("Hi there " + player_name + "!")
-min_num = int(input("Pick a small number."))
-max_num = int(input("Pick another number that's bigger than the small number."))
+min_num = int(input("Pick a small number.\n"))
+max_num = int(input("Pick another number that's bigger than the small number.\n"))
 # generate a number between the two numbers that the player has picked
 guess_me = generate_number(min_num,max_num)
-print("Great!  I'm thinking of a number between " + str(min_num) + " and " + str(max_num) + ". What do you think it is?  You have 5 attempts!")
+print("Great!  I'm thinking of a number between " + str(min_num) + " and " + str(max_num) + ". What do you think it is?  You have 5 attempts!\n")
 
 # players have 5 attempts to guess the right number
 while guess_counter < 5:
