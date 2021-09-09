@@ -1,0 +1,1 @@
+These are just little projects to practice and build my skills
