@@ -41,21 +41,21 @@ class Dice
     # start rolling stuff
     def start_rolling
         puts @beginning_prompt
-        sides = gets.chomp
+        sides = gets.chomp.to_i
 
         # make sure the user has entered an acceptable die
         while self.validate_dice(sides) == false
             puts @invalid_dice_prompt
-            sides = gets.chomp
+            sides = gets.chomp.to_i
         end
 
         # now see how many of them they're rolling
         puts @number_of_dice_prompt
-        num_of_dice = gets.chomp
+        num_of_dice = gets.chomp.to_i
 
         # once the user has entered the information we want, do some rolling
-        result = self.roll_dice(num_of_dice.to_i, sides.to_i)
-        puts "You rolled #{num_of_dice} #{sides}-sided dice.  Here are your results:"
+        result = self.roll_dice(num_of_dice, sides)
+        puts "You rolled #{num_of_dice.to_s} #{sides.to_s}-sided dice.  Here are your results:"
         puts result.to_s
 
         # let's prompt for the adding of dice values
