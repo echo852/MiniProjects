@@ -1,0 +1,1 @@
+# general outline for a World of Darkness type system

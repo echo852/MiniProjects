@@ -1,37 +1,37 @@
 # I often play games that require dice, anywhere between 4-sided up to 100-sided
 
 module DiceBag
-    class InvalidDieError < StandardError    
+    class InvalidDieError < NoMethodError    
+    end
+
+    def what_kind_of_die(sides)
+        case sides
+        when 4
+            return DFour.new
+        when 6
+            return DSix.new
+        when 8
+            return DEight.new
+        when 10
+            return DTen.new
+        when 12
+            return DTwelve.new
+        when 20
+            return DTwenty.new
+        when 100
+            return DHundred.new
+        else
+            raise InvalidDieError
+        end
     end
 
     class Die
         def sides
-            raise NotImplementedError
+            raise NoMethodError
         end
 
         def roll
             rand(1...sides)
-        end
-
-        def what_kind_of_die(sides)
-            case sides
-            when 4
-                return DFour.new
-            when 6
-                return DSix.new
-            when 8
-                return DEight.new
-            when 10
-                return DTen.new
-            when 12
-                return DTwelve.new
-            when 20
-                return DTwenty.new
-            when 100
-                return DHundred.new
-            else
-                raise InvalidDieError
-            end
         end
 
         def sum_dice(dice_array)
@@ -40,6 +40,16 @@ module DiceBag
                 total += num
             }
             return total
+        end
+
+        def reroll_and_keep(roll)
+            # i'll eventually write this
+            # a method to reroll a die and keep the original
+        end
+
+        def reroll_and_toss(roll)
+            # i'll eventually write this
+            # a method to reroll a die and toss the original
         end
     end
 
