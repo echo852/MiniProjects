@@ -36,7 +36,7 @@ while finished == false
     case selection
     when 1
         puts "Okay, rolling a d20 for you.\n"
-        d20 = DiceBag.what_kind_of_die(20)
+        d20 = DTwenty.new
         result = d20.roll
         puts "Here's your result: #{result}\n"
     when 2
