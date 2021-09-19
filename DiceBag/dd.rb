@@ -3,7 +3,7 @@
 require_relative 'dicebag'
 include DiceBag
 
-def roll_stats()
+def roll_ability()
     d6 = DSix.new
     dice_array = []
     until dice_array.length == 4
@@ -22,7 +22,7 @@ end
 menu = [
     "Hi there!  What can I help you do today?",
     "1. Roll a d20.",
-    "2. Roll an ability (roll 4d6 and reroll any 1s, take the 3 highest).",
+    "2. Roll an ability score (roll 4d6 and reroll any 1s, take the 3 highest).",
     "3. Roll damage.",
     "4. Quit."
 ].join("\n")+"\n"
@@ -40,8 +40,8 @@ while finished == false
         result = d20.roll
         puts "Here's your result: #{result}\n"
     when 2
-        puts "Okay, let's roll a stat for you.\n"
-        output = roll_stats
+        puts "Okay, let's roll an ability score for you.\n"
+        output = roll_ability
         puts "Here's a stat for you: #{output}\n"
     when 3
         puts "Okay, let's roll some damage."
@@ -57,7 +57,7 @@ while finished == false
         }
         puts "Here are your results: #{dice_output}\n"
         sum = DiceBag.sum_dice(dice_output)
-        puts "Added together, this totals: #{sum}"
+        puts "Added together, this totals: #{sum}\n"
     when 4
         puts "Okay!  Bye for now!"
         finished = true
